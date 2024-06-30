@@ -1,0 +1,27 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  color: bisque;
+  font-size: 20px;
+}
+
+h1 {
+  color: bisque;
+  font-size: 40px;
+}
+.customToast {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 420px;
+  height: 100px;
+}
+.contContact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

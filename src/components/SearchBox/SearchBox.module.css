@@ -1,0 +1,19 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+  color: black;
+}
+
+.input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: aliceblue;
+  color: black;
+}
