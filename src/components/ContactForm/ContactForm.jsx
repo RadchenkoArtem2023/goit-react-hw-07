@@ -1,44 +1,3 @@
-// import { useState } from "react";
-// import { useDispatch } from "react-redux";
-// import { addContact } from "../../redux/contactsSlice";
-// import styles from "./ContactForm.module.css";
-
-// const ContactsForm = () => {
-//   const [name, setName] = useState("");
-//   const [phone, setPhone] = useState("");
-//   const dispatch = useDispatch();
-
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
-//     dispatch(addContact({ id: Date.now().toString(), name, phone }));
-//     setName("");
-//     setPhone("");
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit} className={styles.form}>
-//       <input
-//         type="text"
-//         value={name}
-//         onChange={(e) => setName(e.target.value)}
-//         placeholder="Ім'я"
-//         required
-//       />
-//       <input
-//         type="text"
-//         value={phone}
-//         onChange={(e) => setPhone(e.target.value)}
-//         placeholder="Телефон"
-//         required
-//       />
-//       <button type="submit" className={styles.button}>
-//         Додати контакт
-//       </button>
-//     </form>
-//   );
-// };
-
-// export default ContactsForm;
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
@@ -100,43 +59,43 @@ const ContactForm = () => {
     <form className={styles.form} onSubmit={formik.handleSubmit}>
       <div className={styles.inputCont}>
         <label className={styles.label} htmlFor="name">
-          Name
+          <input
+            className={styles.input}
+            id="name"
+            name="name"
+            type="text"
+            autoComplete="name"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.name}
+            placeholder="Ім'я"
+          />
         </label>
-        <input
-          className={styles.input}
-          id="name"
-          name="name"
-          type="text"
-          autoComplete="name"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.name}
-        />
       </div>
       {formik.touched.name && formik.errors.name ? (
         <div className={styles.errorMessage}>{formik.errors.name}</div>
       ) : null}
       <div className={styles.inputCont}>
         <label className={styles.label} htmlFor="number">
-          Number
+          <input
+            className={styles.input}
+            id="number"
+            name="number"
+            type="text"
+            autoComplete="number"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.number}
+            placeholder="Телефон"
+          />
         </label>
-        <input
-          className={styles.input}
-          id="number"
-          name="number"
-          type="text"
-          autoComplete="number"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.number}
-        />
       </div>
       {formik.touched.number && formik.errors.number ? (
         <div className={styles.errorMessage}>{formik.errors.number}</div>
       ) : null}
 
       <button className={styles.buttonForm} type="submit">
-        Add Contact
+        Додати контакт
       </button>
     </form>
   );

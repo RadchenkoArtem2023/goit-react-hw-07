@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <div className={styles.contContact}>
-      <h1 className={styles.h1}>Phonebook</h1>
+      <h1 className={styles.h1}>Книга контактів</h1>
       <ContactForm />
       <SearchBox />
       <ContactList />

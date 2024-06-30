@@ -17,7 +17,7 @@ const Contact = ({ contact }) => {
           <FaUserAlt className={styles.icon} /> {contact.name}
         </p>
         <p className={styles.text}>
-          <FaPhoneAlt className={styles.icon} /> {contact.phone}
+          <FaPhoneAlt className={styles.icon} /> {contact.number}
         </p>
       </div>
       <button onClick={handleDelete}>Видалити</button>
